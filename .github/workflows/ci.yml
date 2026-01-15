@@ -15,6 +15,14 @@ jobs:
     name: Run tests
     runs-on: ubuntu-latest
     steps: # install first, then run pytest
+      - name: Check out repo # commonly used that there is existing 3rd party 
+        uses: actions/checkout@v6 # => has a repo for this action: https://github.com/actions/checkout # can specify precise version OR branch
+        # with: 
+        #  repository: # ... that specify the arguments to run with
+      - name: Install Python
+        uses: actions/setup-python
+        with:
+          python-version: '3.13'
       - name: Install Python packagse
         run: pip install .[test]
       - name: Run tests
