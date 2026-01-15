@@ -1,0 +1,8 @@
+on: # spicify the event
+  push: 
+    branches: [main] # specify the branch
+jobs: 
+  hello: # job that runs
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World from GHA!"
