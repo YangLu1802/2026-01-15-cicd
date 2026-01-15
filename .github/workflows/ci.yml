@@ -10,3 +10,12 @@ jobs:
     steps:
       - name: My first step to test CI, but with naming
         run: echo "Hello World from GHA!"
+  
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps: # install first, then run pytest
+      - name: Install Python packagse
+        run: pip install .[test]
+      - name: Run tests
+        run: pytest -vv # make it more verbose
