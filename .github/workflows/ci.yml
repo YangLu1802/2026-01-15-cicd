@@ -3,6 +3,8 @@ name:  My CI
 on: # spicify the event
   push: 
     branches: [main] # specify the branch
+  pull_request:
+  workflow_dispatch:
 jobs: 
   hello: # job that runs
     name: hello job 
